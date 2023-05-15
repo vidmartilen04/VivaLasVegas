@@ -38,7 +38,7 @@
 			<br>
 			<div id="dForm">
 				<p id="players">Select number of rounds</p>
-				<select name="rounds" id="playersS">
+				<select name="rounds" id="roundsN">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
