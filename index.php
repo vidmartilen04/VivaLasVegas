@@ -33,12 +33,12 @@
 			<br>
 			<div id="dForm">
 				<p id="players">Number of dice</p>
-				<label for="Player">1 dice</label>
-				<input type="radio" name="dice1" value="1">
-				<label for="Player">2 dice</label>
-				<input type="radio" name="dice2" value="2">
-				<label for="Player">3 dice</label>
-				<input type="radio" name="dice3" value="3">
+				<label for="Dice">1 dice</label>
+				<input type="radio" name="Dice" value="1">
+				<label for="Dice">2 dice</label>
+				<input type="radio" name="Dice" value="2">
+				<label for="Dice">3 dice</label>
+				<input type="radio" name="Dice" value="3">
 			</div>
 			<br>
 			<div id="dForm">

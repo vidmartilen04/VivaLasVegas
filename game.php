@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,117 +17,180 @@
 	<h1 id="title">VIVA LAS VEGAS</h1>
 	</div>
 	<div id="body">
+		<?php 
+				session_start();
+
+				 $_SESSION['player1'] = $_POST["Player1"];
+				 $_SESSION['player2'] = $_POST["Player2"];
+				 $_SESSION['player3'] = $_POST["Player3"];
+				 $Rounds = $_POST["rounds"];
+				 if (isset($_POST["rounds"])) {
+    				$rounds = $_POST["rounds"];
+				 }
+				 if (isset($_POST["Dice"])) {
+    				$numDice = $_POST["Dice"];
+				 }
+				 $a=$_POST['1'];
+
+				//Player 1
+				$a = rand(1,6);
+				$b = rand(1,6);
+				$c = rand(1,6);
+
+				//Player 2
+				$d = rand(1,6);
+				$e = rand(1,6);
+				$f = rand(1,6);
+
+				//Player 3
+				$g = rand(1,6);
+				$h = rand(1,6);
+				$i = rand(1,6);
+
+			 	$totalP1=$totalP1+$a+$b+$c;
+			 	$totalP2=$totalP2+$d+$e+$f;
+			 	$totalP3=$totalP3+$g+$h+$i;
+
+			?>
 		<br>
 		<div id="title">
-			<p id="titleR">ROUND 1/<?php echo $_SESSION["rounds"];?></p>
+			<p id="titleR">ROUND <?php echo $a.'/'.$Rounds; ?></p>
 		</div>
 		<div id="players">
 		<div id="player1">
 			<?php 
-				 $Player1 = $_POST["Player1"];
-				 $Player2 = $_POST["Player2"];
-				 $Player3 = $_POST["Player3"];
-				 //$_SESSION["rounds"];
-
-				//Player 1
-				$a = rand(1,6);
-				$b = rand(1,6);
-				$c = rand(1,6);
-
-				//Player 2
-				$d = rand(1,6);
-				$e = rand(1,6);
-				$f = rand(1,6);
-
-				//Player 3
-				$g = rand(1,6);
-				$h = rand(1,6);
-				$i = rand(1,6);
-
-			 	$totalP1=$totalP1+$a+$b+$c;
-			 	$totalP2=$totalP2+$d+$e+$f;
-			 	$totalP3=$totalP3+$g+$h+$i;
-
-				function reRoll(){
-	
-				//Player 1
-				$a = rand(1,6);
-				$b = rand(1,6);
-				$c = rand(1,6);
-
-				//Player 2
-				$d = rand(1,6);
-				$e = rand(1,6);
-				$f = rand(1,6);
-
-				//Player 3
-				$g = rand(1,6);
-				$h = rand(1,6);
-				$i = rand(1,6);
-
-			 	$totalP1=$totalP1+$a+$b+$c;
-			 	$totalP2=$totalP2+$d+$e+$f;
-			 	$totalP3=$totalP3+$g+$h+$i;
-
+				if ($numDice == 1) {
+					echo '<p>'.$_SESSION['player1'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$a.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.($totalP1-$c-$b).'</div></div>';
 				}
-			?>
+				if ($numDice == 2) {
+					echo '<p>'.$_SESSION['player1'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
 
-			<p><?php echo $Player1;?></p>
-			<div class="diceAnimation">
-			<img src="img/dicee.gif">
-			<img src="img/dicee.gif">
-			<img src="img/dicee.gif">
-			</div>
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$a.'.png">
+					<img src="img/d'.$b.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.($totalP1-$c).'</div></div>';
+				}
+				if ($numDice == 3) {
+					echo '<p>'.$_SESSION['player1'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$a.'.png">
+					<img src="img/d'.$b.'.png">
+					<img src="img/d'.$c.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.$totalP1.'</div></div>';
+				}
 
-			<div class="diceResult" style="display: none;">
-				<img src="img/d<?php echo $a;?>.png">
-				<img src="img/d<?php echo $b;?>.png">
-				<img src="img/d<?php echo $c;?>.png">
-			</div>
 			
-
-			<div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;"><?php echo $totalP3; ?></div></div>
-			
+			?>			
 
 		</div>
 		<div id="player2">
-			<p><?php echo $Player2; ?></p>
-			<div class="diceAnimation">
-			<img src="img/dicee.gif">
-			<img src="img/dicee.gif">
-			<img src="img/dicee.gif">
-			</div>
+			<?php 
+			if ($numDice == 1) {
+					echo '<p>'.$_SESSION['player2'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$d.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.($totalP2-$f-$e).'</div></div>';
+				}
+				if ($numDice == 2) {
+					echo '<p>'.$_SESSION['player2'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
 
-			<div class="diceResult" style="display: none;">
-				<img src="img/d<?php echo $d;?>.png">
-				<img src="img/d<?php echo $e;?>.png">
-				<img src="img/d<?php echo $f;?>.png">
-			</div>
-		
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$d.'.png">
+					<img src="img/d'.$e.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.($totalP2-$f).'</div></div>';
+				}
+				if ($numDice == 3) {
+					echo '<p>'.$_SESSION['player2'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$d.'.png">
+					<img src="img/d'.$e.'.png">
+					<img src="img/d'.$f.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.$totalP2.'</div></div>';
+				}
 
-			<div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;"><?php echo $totalP3; ?></div></div>
+			?>			
 			
 		</div>
 		<div id="player3">
-			<p><?php echo $Player3; ?></p>
-			<div class="diceAnimation">
-			<img src="img/dicee.gif">
-			<img src="img/dicee.gif">
-			<img src="img/dicee.gif">
-			</div>
+			<?php 
+			if ($numDice == 1) {
+					echo '<p>'.$_SESSION['player3'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$g.'.png">
+					</div>';
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.($totalP3-$i-$h).'</div></div>';
+				}
+				if ($numDice == 2) {
+					echo '<p>'.$_SESSION['player3'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
 
-			<div class="diceResult" style="display: none;">
-				<img src="img/d<?php echo $g;?>.png">
-				<img src="img/d<?php echo $h;?>.png">
-				<img src="img/d<?php echo $i;?>.png">
-			</div>
-			
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$g.'.png">
+					<img src="img/d'.$h.'.png">
+					</div>';
 
-		<div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;"><?php echo $totalP3; ?></div></div>
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.($totalP3-$i).'</div></div>';
+				}
+				if ($numDice == 3) {
+					echo '<p>'.$_SESSION['player3'].'</p>
+					<div class="diceAnimation">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
+					<img src="img/dicee.gif">
+					</div>
+					<div class="diceResult" style="display: none;">
+					<img src="img/d'.$g.'.png">
+					<img src="img/d'.$h.'.png">
+					<img src="img/d'.$i.'.png">
+					</div>';
+
+					echo '<br><div class="totalLine"><div class="total">Total:</div><div class="totalResult" style="display: none;">'.$totalP3.'</div></div>';
+				}
+
+			?>		
 	</div>
 	<div id="batton">
 		<form action="game.php">
-			<center><input id="buttonR" type="submit" name="Reroll" value="Reroll" onclick="<?php reRoll();?>" style="border-radius: 5px;"></center>
+			<center><input id="buttonR" type="submit" name="Reroll" value="Reroll" onclick="" style="border-radius: 5px;"></center>
 		</form>
 	</div>
 	</div>
