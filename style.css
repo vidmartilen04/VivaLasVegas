@@ -33,7 +33,7 @@ body{
 	height: 4em;
 	text-align: center;
 }
-input{
+input[type=text]{
 	font-family:"Lucida Sans Unicode";
 	margin-left: 5px;
 	margin-right: 10px;
@@ -43,9 +43,19 @@ input{
 	font-weight: bold;
 	background-color:#508991;
 	color: #E0D8DE;
-	box-shadow: 2px 2px 2px #75DDDD;
-	border: 2px solid #75DDDD;
-	border-radius: 15px;
+	border: none;
+	border-bottom: 2px solid #75DDDD;
+}
+input[type=radio]{
+	font-family:"Lucida Sans Unicode";
+	margin-left: 5px;
+	margin-right: 10px;
+	text-align: center;
+	width: 125px;
+	height: 22px;
+	font-weight: bold;
+	background-color:#508991;
+	color: #E0D8DE;
 }
 select{
 	font-family:"Lucida Sans Unicode";
@@ -65,7 +75,6 @@ label{
 	font-family:"Lucida Sans Unicode";
 	font-weight: 700;
 }
-
 #button{
 	font-family:"Lucida Sans Unicode";
 	margin-left: 5px;

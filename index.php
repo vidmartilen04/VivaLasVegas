@@ -10,6 +10,11 @@
 	<title>Viva Las Vegas</title>
 </head>
 <body>
+	<?php 
+		session_start();
+
+		$_SESSION["rounds"] = $_POST["rounds"];
+	 ?>
 	<div id=head>
 	<h1 id="title">VIVA LAS VEGAS</h1>
 	</div>
@@ -19,26 +24,26 @@
 				<div id="dForm">
 				<p id="players">Players</p>	
 				<label for="Player1">Player 1:</label>
-				<input type="text" name="Player1" required>
+				<input id="p1" type="text" name="Player1" required>
 				<label for="Player2">Player 2:</label required>
-				<input type="text" name="Player2">
+				<input id="p2" type="text" name="Player2">
 				<label for="Player3">Player 3:</label required>
-				<input type="text" name="Player3">
+				<input id="p3" type="text" name="Player3">
 			</div>
 			<br>
 			<div id="dForm">
 				<p id="players">Number of dice</p>
 				<label for="Player">1 dice</label>
-				<input type="radio" name="Player1" value="1">
+				<input type="radio" name="dice1" value="1">
 				<label for="Player">2 dice</label>
-				<input type="radio" name="Player2" value="2">
+				<input type="radio" name="dice2" value="2">
 				<label for="Player">3 dice</label>
-				<input type="radio" name="Player3" value="3">
+				<input type="radio" name="dice3" value="3">
 			</div>
 			<br>
 			<div id="dForm">
 				<p id="players">Select number of rounds</p>
-				<select name="rounds" id="roundsN">
+				<select name="rounds" id="rounds">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>

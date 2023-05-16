@@ -23,18 +23,21 @@ body{
 #player1{
 	display: inline-block;
 	border: 2px solid #75DDDD;
+	border-radius: 5px;
 	width:25%;
 	height: 15em;
 }
 #player2{
 	display: inline-block;
 	border: 2px solid #75DDDD;
+	border-radius: 5px;
 	width:25%;
 	height: 15em;
 }
 #player3{
 	display: inline-block;
 	border: 2px solid #75DDDD;
+	border-radius: 5px;
 	width:25%;
 	height: 15em;
 }
@@ -52,16 +55,40 @@ img{
 	margin-left: 15px;
 	margin-right: 15px;
 }
+.totalLine{
+	display: inline-block;
+	right: 45%;
+	top: 1em;
+	border: 1px solid black;
+	align-self: center;
+	text-align: center;
+	height: 32px;
+	width: 80%;
+}
+.total{
+	display: inline-block;
+}
+.totalResult{
+	display: inline-block;
+}
 #batton{
 	width: 100%;
 	height: 3em;
 	position: relative;
 }
-#buttonR{
+input[type=submit]{
 	margin: 0;
   	position: absolute;
   	top: 1em;
   	right: 45%;
+  	font-weight: bold;
+	background-color:#508991;
+	color: #E0D8DE;
+	box-shadow: 2px 2px 2px #75DDDD;
+	border: 2px solid #75DDDD;
+	border-radius: 15px;
+	width: 125px;
+	height: 22px;
 }
 #title{
 	width: 100%;
