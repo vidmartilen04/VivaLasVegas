@@ -1,0 +1,42 @@
+body{
+    background-color:#172A3A;
+    text-align: center;
+}
+div{
+    display: inline-block;
+    width: 25%;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    height: 25vh;
+    box-shadow: 2px 2px 2px 2px #75DDDD;
+    border-radius: 15px;
+    text-align: center;
+    
+    }
+#first{
+    height: 75vh;
+    width: 20vh;
+    background-color: #d4af37;
+    
+}
+#second{
+    height: 50vh;
+    width: 20vh;
+    background-color: #c0c0c0;
+    
+}
+#third{
+    height: 35vh;
+    width: 20vh;
+    background-color:  #cd7f32;
+    
+}
+p{
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    color: aliceblue;
+}
+img{
+    width: 10vh;
+    height: 10vh;
+}
